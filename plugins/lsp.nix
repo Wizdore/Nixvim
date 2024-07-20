@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.nixvim = {
@@ -9,6 +9,14 @@
 
     plugins.fidget = { # Useful status updates for LSP.
       enable = true;
+    };
+
+    plugins.nvim-jdtls = { # JAVA LSP
+      enable = true;
+
+      cmd = [
+        (lib.getExe pkgs.jdt-language-server)
+      ];
     };
 
     extraPlugins = with pkgs.vimPlugins; [
@@ -266,7 +274,7 @@
         #  enable = true;
         #}
 
-        lua-ls = {
+        lua-ls = { # LUA
           enable = true;
 
           # cmd = {
@@ -282,6 +290,10 @@
             #    "missing-fields";
             #};
           };
+        };
+
+        nil_ls = { # NIX
+          enable = true;
         };
       };
     };
