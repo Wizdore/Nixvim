@@ -1,15 +1,7 @@
-{ config, pkgs, inputs, ... }:
-
 {
-  # https://nix-community.github.io/nixvim/plugins/lint/index.html
-  #
-  # Linting
   programs.nixvim = {
-    autoGroups = {
-      lint = {
-        clear = true;
-      };
-    };
+    # Linting
+    # https://nix-community.github.io/nixvim/plugins/lint/index.html
     plugins.lint = {
       enable = true;
 
@@ -45,6 +37,13 @@
           "BufWritePost"
           "InsertLeave"
         ];
+      };
+    };
+
+    # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
+    autoGroups = {
+      lint = {
+        clear = true;
       };
     };
   };

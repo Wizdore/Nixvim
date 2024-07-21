@@ -1,14 +1,11 @@
-{ config, pkgs, inputs, ... }:
-
 {
-  # https://nix-community.github.io/nixvim/plugins/dap/index.html
-  #
-  # Shows how to use the DAP plugin to debug your code.
-  #
-  # Primarily focused on configuring the debugger for Go, but can
-  # be extended to other languages as well. That's why it's called
-  # kickstart.nixvim and not ktichen-sink.nixvim ;)
   programs.nixvim = {
+    # Shows how to use the DAP plugin to debug your code.
+    #
+    # Primarily focused on configuring the debugger for Go, but can
+    # be extended to other languages as well. That's why it's called
+    # kickstart.nixvim and not ktichen-sink.nixvim ;)
+    # https://nix-community.github.io/nixvim/plugins/dap/index.html
     plugins.dap = {
       enable = true;
 
@@ -20,7 +17,7 @@
           # Set icons to characters that are more likely to work in every terminal.
           # Feel free to remove or use ones that you like more! :)
           # Don't feel like these are good choices.
-          icons = { 
+          icons = {
             expanded = "▾";
             collapsed = "▸";
             current_frame = "*";
@@ -48,6 +45,7 @@
       };
     };
 
+    # https://nix-community.github.io/nixvim/keymaps/index.html
     keymaps = [
       {
         mode = "n";
@@ -137,6 +135,7 @@
       }
     ];
 
+    # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraconfiglua#extraconfiglua
     extraConfigLua = ''
       require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
       require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
