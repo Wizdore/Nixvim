@@ -119,6 +119,10 @@
             #};
           };
         };
+
+        nil-ls = {
+          enable = true;
+        };
       };
 
       keymaps = {
