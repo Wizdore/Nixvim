@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   programs.nixvim = {
     # Dependencies
     #
@@ -302,64 +302,6 @@
           end, '[T]oggle Inlay [H]ints')
         end
       '';
-<<<<<<< HEAD
-
-      # Enable the following language servers
-      #  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-      #
-      #  Add any additional override configuration in the following tables. Available keys are:
-      #  - cmd (table): Override the default command used to start the server
-      #  - filetypes (table): Override the default list of associated filetypes for the server
-      #  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-      #  - settings (table): Override the default settings passed when initializing the server.
-      #        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      servers = {
-        # clangd = {
-        #  enable = true;
-        #}
-        # gopls = {
-        #  enable = true;
-        #}
-        # pyright = {
-        #  enable = true;
-        #}
-        # rust_analyzer = {
-        #  enable = true;
-        #}
-        # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
-        #
-        # Some languages (like typscript) have entire language plugins that can be useful:
-        #    `https://nix-community.github.io/nixvim/plugins/typescript-tools/index.html?highlight=typescript-tools#pluginstypescript-toolspackage`
-        #
-        # But for many setups the LSP (`tsserver`) will work just fine
-        # tsserver = {
-        #  enable = true;
-        #}
-
-        lua-ls = { # LUA
-          enable = true;
-
-          # cmd = {
-          #};
-          # filetypes = {
-          #};
-          settings = {
-            completion = {
-              callSnippet = "Replace";
-            };
-            #diagnostics = {
-            #  disable = {
-            #    "missing-fields";
-            #};
-          };
-        };
-
-        nil_ls = { # NIX
-          enable = true;
-        };
-      };
-=======
->>>>>>> main
     };
   };
 }
