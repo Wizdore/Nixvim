@@ -162,10 +162,17 @@
       # Don't show the mode, since it's already in the statusline
       showmode = false;
 
-      # Sync clipboard between OS and Neovim
-      #  Remove this option if you want your OS clipboard to remain independent.
       #  See `:help 'clipboard'`
-      clipboard = "unnamedplus";
+      clipboard = {
+        providers = {
+          wl-copy.enable = true; # For Wayland
+          xsel.enable = true; # For X11
+        };
+
+        # Sync clipboard between OS and Neovim
+        #  Remove this option if you want your OS clipboard to remain independent.
+        register = "unnamedplus";
+      };
 
       # Enable break indent
       breakindent = true;
@@ -207,7 +214,7 @@
       # Minimal number of screen lines to keep above and below the cursor
       scrolloff = 10;
 
-      # Set highlight on search, but clear on pressing <Esc> in normal mode
+      # See `:help hlsearch`
       hlsearch = true;
     };
 
@@ -215,6 +222,7 @@
     #  See `:help vim.keymap.set()`
     # https://nix-community.github.io/nixvim/keymaps/index.html
     keymaps = [
+      # Clear highlights on search when pressing <Esc> in normal mode
       {
         mode = "n";
         key = "<Esc>";
@@ -325,12 +333,6 @@
       # Detect tabstop and shiftwidth automatically
       # https://nix-community.github.io/nixvim/plugins/sleuth/index.html
       sleuth = {
-        enable = true;
-      };
-
-      # "gc" to comment visual regions/lines
-      # https://nix-community.github.io/nixvim/plugins/comment/index.html
-      comment = {
         enable = true;
       };
 
