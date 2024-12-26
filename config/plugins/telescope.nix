@@ -55,13 +55,13 @@
           desc = "[S]earch [F]iles";
         };
       };
-      "<leader>ss" = {
-        mode = "n";
-        action = "builtin";
-        options = {
-          desc = "[S]earch [S]elect Telescope";
-        };
-      };
+      # "<leader>ss" = {
+      #   mode = "n";
+      #   action = "builtin";
+      #   options = {
+      #     desc = "[S]earch [S]elect Telescope";
+      #   };
+      # };
       "<leader>sw" = {
         mode = "n";
         action = "grep_string";
