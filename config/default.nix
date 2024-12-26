@@ -226,29 +226,27 @@
         desc = "Exit terminal mode";
       };
     }
-    # TIP: Disable arrow keys in normal mode
-    /*
+    # Using Arrow keys to resize windows
     {
       mode = "n";
       key = "<left>";
-      action = "<cmd>echo 'Use h to move!!'<CR>";
+      action = "<cmd>vertical resize -2<CR>";
     }
     {
-      mode = "n";
+      mode = "n"; 
       key = "<right>";
-      action = "<cmd>echo 'Use l to move!!'<CR>";
+      action = "<cmd>vertical resize +2<CR>";
     }
     {
       mode = "n";
-      key = "<up>";
-      action = "<cmd>echo 'Use k to move!!'<CR>";
+      key = "<up>"; 
+      action = "<cmd>resize +2<CR>";
     }
     {
       mode = "n";
       key = "<down>";
-      action = "<cmd>echo 'Use j to move!!'<CR>";
-    }
-    */
+      action = "<cmd>resize -2<CR>";
+    }  
     # Keybinds to make split navigation easier.
     #  Use CTRL+<hjkl> to switch between windows
     #
