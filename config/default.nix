@@ -127,7 +127,7 @@
     maplocalleader = " ";
 
     # Set to true if you have a Nerd Font installed and selected in the terminal
-    have_nerd_font = false;
+    have_nerd_font = true;
   };
 
   clipboard = {
@@ -151,7 +151,7 @@
     number = true;
     # You can also add relative line numbers, to help with jumping.
     #  Experiment for yourself to see if you like it!
-    #relativenumber = true
+    relativenumber = true;
 
     # Enable mouse mode, can be useful for resizing splits for example!
     mouse = "a";
@@ -197,7 +197,7 @@
     cursorline = true;
 
     # Minimal number of screen lines to keep above and below the cursor
-    scrolloff = 10;
+    scrolloff = 15;
 
     # Set highlight on search, but clear on pressing <Esc> in normal mode
     hlsearch = true;
