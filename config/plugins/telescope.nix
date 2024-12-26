@@ -48,7 +48,7 @@
           desc = "[S]earch [K]eymaps";
         };
       };
-      "<leader>sf" = {
+      "<leader>ss" = {
         mode = "n";
         action = "find_files";
         options = {
