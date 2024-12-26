@@ -48,7 +48,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<F5>";
+      key = "<F1>";
       action.__raw = ''
         function()
           require('dap').continue()
@@ -60,7 +60,7 @@
     }
     {
       mode = "n";
-      key = "<F1>";
+      key = "<F2>";
       action.__raw = ''
         function()
           require('dap').step_into()
@@ -72,7 +72,7 @@
     }
     {
       mode = "n";
-      key = "<F2>";
+      key = "<F3>";
       action.__raw = ''
         function()
           require('dap').step_over()
@@ -84,7 +84,7 @@
     }
     {
       mode = "n";
-      key = "<F3>";
+      key = "<F4>";
       action.__raw = ''
         function()
           require('dap').step_out()
@@ -92,6 +92,30 @@
       '';
       options = {
         desc = "Debug: Step Out";
+      };
+    }
+    {
+      mode = "n";
+      key = "<F5>";
+      action.__raw = ''
+        function()
+          require('dap').step_back()
+        end
+      '';
+      options = {
+        desc = "Debug: Step Back";
+      };
+    }
+    {
+      mode = "n";
+      key = "<F6>";
+      action.__raw = ''
+        function()
+          require('dap').restart()
+        end
+      '';
+      options = {
+        desc = "Debug: Restart Debugging";
       };
     }
     {
